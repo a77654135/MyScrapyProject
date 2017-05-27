@@ -29,7 +29,6 @@ class QiushibaikeSpider(scrapy.Spider):
                 count = int(count[0])
                 for i in range(1,count+1):
                     link = re.sub(r'/\d+\?','/{}?'.format(i),href,1)
-                    print link
                     yield Request('{}{}'.format(self.base_url,link),callback=self.getContentList,meta=response.meta)
 
 
