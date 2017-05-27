@@ -2,7 +2,7 @@
 import scrapy
 import re
 from scrapy.http.request import Request
-from MyScrapyProject.items.qiushibaike_items import QiushibaikeItem
+from MyScrapyProject.items.items import QiushibaikeItem
 
 
 class QiushibaikeSpider(scrapy.Spider):

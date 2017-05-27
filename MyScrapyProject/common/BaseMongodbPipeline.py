@@ -7,7 +7,7 @@ from pymongo.errors import PyMongoError
 
 MONGODB_HOST = '127.0.0.1'
 MONGODB_PORT = 27017
-MONGODB_DATABASE = 'MyScrapyData'
+MONGODB_DATABASE = 'scrapyData'
 
 class BaseMongodbPipeline(object):
     def __init__(self,db,coll,useMongo):

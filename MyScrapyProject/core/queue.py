@@ -10,7 +10,7 @@ from scrapy.utils.reqser import request_to_dict,request_from_dict
 
 REDIS_HOST = '127.0.0.1'
 REDIS_PORT = 6379
-REDIS_DB = 1
+REDIS_DB = 0
 REDIS_SCHEDULER_KEY = 'scheduler_queue_key'
 
 class BaseQueue(object):
