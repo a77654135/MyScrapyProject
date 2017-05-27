@@ -93,3 +93,11 @@ import datetime
 dt = datetime.datetime.now()
 LOG_FILE = 'logs/logging-{}_{}_{}_{}_{}.txt'.format(dt.year,dt.month,dt.day,dt.hour,dt.minute)
 LOG_LEVEL = 'WARNING'
+
+SCHEDULER = 'MyScrapyProject.core.scheduler.Scheduler'
+DUPEFILTER_CLASS = 'MyScrapyProject.core.dupfilter.RedisDupeFilter'
+SCHEDULER_QUEUE = 'MyScrapyProject.core.queue.RedisQueue'
+
+REDIS_HOST = '127.0.0.1'
+REDIS_PORT = 6379
+REDIS_DB = 1
