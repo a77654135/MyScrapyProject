@@ -68,8 +68,8 @@ DOWNLOADER_MIDDLEWARES = {
 #    'MyScrapyProject.pipelines.MyscrapyprojectPipeline': 300,
 #}
 
-# Enable and configure the AutoThrottle extension (disabled by default)
-# See http://doc.scrapy.org/en/latest/topics/autothrottle.html
+#Enable and configure the AutoThrottle extension (disabled by default)
+#See http://doc.scrapy.org/en/latest/topics/autothrottle.html
 AUTOTHROTTLE_ENABLED = True
 # The initial download delay
 AUTOTHROTTLE_START_DELAY = 5
