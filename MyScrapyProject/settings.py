@@ -64,9 +64,9 @@ DOWNLOADER_MIDDLEWARES = {
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'MyScrapyProject.pipelines.MyscrapyprojectPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'MyScrapyProject.common.BaseMongodbPipeline.BaseMongodbPipeline': 900,
+}
 
 #Enable and configure the AutoThrottle extension (disabled by default)
 #See http://doc.scrapy.org/en/latest/topics/autothrottle.html
@@ -101,3 +101,7 @@ SCHEDULER_QUEUE = 'MyScrapyProject.core.queue.RedisQueue'
 REDIS_HOST = '127.0.0.1'
 REDIS_PORT = 6379
 REDIS_DB = 1
+
+MONGODB_HOST = '127.0.0.1'
+MONGODB_PORT = 27017
+MONGODB_DATABASE = 'MyScrapyData'
