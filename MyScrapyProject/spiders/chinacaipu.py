@@ -16,23 +16,19 @@ class ChinacaipuSpider(scrapy.Spider):
     ]
     base_url = r'http://www.chinacaipu.com'
 
-    custom_settings = {
-        "IMAGES_STORE": os.path.join(os.path.abspath(os.path.dirname(os.path.dirname(__file__))),'media/chinacaipu'),
-        "IMAGES_EXPIRES": 30,
-        "IMAGES_THUMBS": {
-            'small':(50,50),
-            'big':(270,270),
-        },
-        "IMAGES_MIN_HEIGHT": 0,
-        "IMAGES_MIN_WIDTH": 0,
-        'REDIS_SCHEDULER_KEY': 'chinacaipu:scheduler_queue_key',
-        'REDIS_DUPEFILTER_KEY': 'chinacaipu:dupefilter_key',
-        'ITEM_PIPELINES': {
-            'MyScrapyProject.pipelines.ChinacaipuPipelines.ChinacaipuMongodbPipeline': 300,
-            'MyScrapyProject.pipelines.ChinacaipuPipelines.ChinacaipuMysqlPipeline': 350,
-            'MyScrapyProject.pipelines.ChinacaipuPipelines.ChinacaipuImagePipeline': 400,
-        }
-    }
+    # custom_settings = {
+    #     "IMAGES_STORE": os.path.join(os.path.abspath(os.path.dirname(os.path.dirname(__file__))),'media/chinacaipu'),
+    #     "IMAGES_EXPIRES": 30,
+    #     "IMAGES_THUMBS": {
+    #         'small':(50,50),
+    #         'big':(270,270),
+    #     },
+    #     "IMAGES_MIN_HEIGHT": 0,
+    #     "IMAGES_MIN_WIDTH": 0,
+    #     'ITEM_PIPELINES': {
+    #         'MyScrapyProject.pipelines.ChinacaipuPipelines.ChinacaipuImagePipeline': 400,
+    #     }
+    # }
 
     def parse(self, response):
         a_list = response.xpath('//ul[@class="c_conlist"]/li')

@@ -10,13 +10,7 @@ class XicidailiSpider(scrapy.Spider):
     base_url = r'http://www.xicidaili.com/nn/'
 
     custom_settings = {
-        'REDIS_SCHEDULER_KEY': 'xicidaili:scheduler_queue_key',
-        'REDIS_DUPEFILTER_KEY': 'xicidaili:dupefilter_key',
-        'SCHEDULER_QUEUE': 'MyScrapyProject.core.queue.RedisQueue',
         'DOWNLOAD_DELAY':10,
-        'ITEM_PIPELINES': {
-            'MyScrapyProject.pipelines.XicidailiPipelines.XicidailiMongodbPipeline': 300,
-        }
     }
 
 

@@ -12,17 +12,6 @@ class Xuexi111Spider(scrapy.Spider):
     allowed_domains = ["xuexi111.com"]
     start_urls = ['http://www.xuexi111.com/']
 
-    custom_settings = {
-        'REDIS_SCHEDULER_KEY':'xuexi111:scheduler_queue_key',
-        'REDIS_DUPEFILTER_KEY':'xuexi111:dupefilter_key',
-        'MONGODB_COLLECTION':'xuexi111',
-        'SCHEDULER_QUEUE': 'MyScrapyProject.core.queue.RedisQueue',
-        'ITEM_PIPELINES': {
-            'MyScrapyProject.pipelines.Xuexi111Pipelines.DropInvalidItem': 200,
-            'MyScrapyProject.pipelines.Xuexi111Pipelines.MongodbPipeline': 300,
-        }
-    }
-
     def parse(self, response):
         html = BeautifulSoup(response.text, 'lxml')
         a_list = html.select('#dibudao > a')
