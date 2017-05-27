@@ -45,11 +45,12 @@ class QiushibaikeSpider(scrapy.Spider):
             comments = content.xpath(r'div[@class="stats"]/span[@class="stats-comments"]//i/text()').extract_first()
 
             item = QiushibaikeItem()
-            item["author_img"] = "http:{}".format(author_img)
-            item["author_name"] = author_name
-            item["content_href"] = "{}{}".format(self.base_url,content_href)
-            item["content_str"] = content_str
-            item["thumb"] = "http:{}".format(thumb)
-            item["vote"] = vote
-            item["comments"] = comments
+            item["category"] = response.meta.get("menu","")
+            item["author_img"] = "http:{}".format(author_img) if author_img else ""
+            item["author_name"] = author_name or ""
+            item["content_href"] = "{}{}".format(self.base_url,content_href) if content_href else ""
+            item["content_str"] = content_str or ""
+            item["thumb"] = "http:{}".format(thumb) if thumb else ""
+            item["vote"] = vote or 0
+            item["comments"] = comments or 0
             yield item
